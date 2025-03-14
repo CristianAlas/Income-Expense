@@ -198,3 +198,117 @@ La aplicación utiliza dos entidades principales:
 ## Licencia
 
 Este proyecto está licenciado bajo la Licencia MIT - ver el archivo LICENSE para más detalles.
+
+# Finanzas Personales con Angular y Ng-Zorro
+
+Este proyecto es una aplicación de gestión de finanzas personales desarrollada con Angular y la biblioteca de componentes Ng-Zorro Ant Design. Permite a los usuarios llevar un registro de sus ingresos y gastos, visualizar estadísticas financieras y gestionar sus transacciones.
+
+## Características Principales
+
+* **Dashboard:**
+    * Visualización de estadísticas clave: balance, ingresos totales y gastos totales.
+    * Gráficos de líneas para ingresos y gastos.
+    * Historial reciente de ingresos y gastos.
+    * Resumen de ingresos y gastos mínimos y máximos.
+* **Gestión de Gastos:**
+    * Formulario para agregar nuevos gastos con título, monto, fecha, descripción y categoría.
+    * Lista de gastos pasados con opciones para editar y eliminar.
+    * Actualización de gastos.
+* **Gestión de Ingresos:**
+    * Formulario para agregar nuevos ingresos con título, monto, fecha, descripción y categoría.
+    * Lista de ingresos pasados con opciones para editar y eliminar.
+    * Actualización de ingresos.
+* **Gráficos:**
+    * Gráficos de líneas interactivos para visualizar la tendencia de ingresos y gastos a lo largo del tiempo.
+* **Interfaz de Usuario:**
+    * Interfaz de usuario moderna y responsiva utilizando Ng-Zorro Ant Design.
+    * Navegación intuitiva con un menú lateral.
+    * Notificaciones de éxito y error.
+
+## Tecnologías Utilizadas
+
+* **Angular:** Framework para la construcción de aplicaciones web.
+* **Ng-Zorro Ant Design:** Biblioteca de componentes UI para Angular.
+* **Chart.js:** Biblioteca para la creación de gráficos.
+* **TypeScript:** Lenguaje de programación para Angular.
+* **HttpClient:** Módulo de Angular para realizar peticiones HTTP.
+
+## Estructura del Proyecto
+
+* `src/app/components/`: Contiene los componentes de la aplicación (dashboard, expense, income, update-expense, update-income).
+* `src/app/services/`: Contiene los servicios para interactuar con la API (expense.service, income.service, stats.service).
+* `src/app/app-routing.module.ts`: Define las rutas de la aplicación.
+* `src/app/app.module.ts`: Módulo principal de la aplicación.
+* `src/app/DemoNgZorroAntdModule.ts`: Modulo que contiene todos los modulos de ng-zorro.
+* `src/app/app.component.html`: Plantilla principal de la aplicación.
+* `src/app/app.component.scss`: Estilos globales de la aplicación.
+
+## Requisitos Previos
+
+* Node.js y npm instalados.
+* Angular CLI instalado (`npm install -g @angular/cli`).
+
+## Instalación
+
+1.  Clona el repositorio:
+
+    ```bash
+    git clone [https://github.com/cran/DELTD](https://github.com/cran/DELTD)
+    cd [nombre del repositorio]
+    ```
+
+2.  Instala las dependencias:
+
+    ```bash
+    npm install
+    ```
+
+## Ejecución
+
+1.  Inicia el servidor de desarrollo:
+
+    ```bash
+    ng serve --open
+    ```
+
+2.  La aplicación se abrirá en tu navegador en `http://localhost:4200/`.
+
+## Servicios (Backend)
+
+La aplicación depende de una API RESTful para gestionar los datos de ingresos y gastos. Asegúrate de que el backend esté en ejecución en `http://localhost:8080/`.
+
+* **Expense Service:**
+    * `POST /api/expense`: Agrega un nuevo gasto.
+    * `GET /api/expense/all`: Obtiene todos los gastos.
+    * `DELETE /api/expense/{id}`: Elimina un gasto por ID.
+    * `GET /api/expense/{id}`: Obtiene un gasto por ID.
+    * `PUT /api/expense/{id}`: Actualiza un gasto por ID.
+* **Income Service:**
+    * `POST /api/income`: Agrega un nuevo ingreso.
+    * `GET /api/income/all`: Obtiene todos los ingresos.
+    * `DELETE /api/income/{id}`: Elimina un ingreso por ID.
+    * `GET /api/income/{id}`: Obtiene un ingreso por ID.
+    * `PUT /api/income/{id}`: Actualiza un ingreso por ID.
+* **Stats Service:**
+    * `GET /api/stats`: Obtiene las estadisticas generales.
+    * `GET /api/chart`: Obtiene la data para los graficos.
+
+## Componentes Principales
+
+* **DashboardComponent:** Muestra las estadísticas financieras y los gráficos.
+* **ExpenseComponent:** Gestiona los gastos (agregar, listar, editar, eliminar).
+* **IncomeComponent:** Gestiona los ingresos (agregar, listar, editar, eliminar).
+* **UpdateExpenseComponent:** Actualiza un gasto existente.
+* **UpdateIncomeComponent:** Actualiza un ingreso existente.
+
+## Ng-Zorro Ant Design
+
+Se utiliza Ng-Zorro Ant Design para proporcionar una interfaz de usuario consistente y de alta calidad. Los componentes como `nz-card`, `nz-form`, `nz-table`, `nz-menu`, y `nz-layout` se utilizan ampliamente en toda la aplicación.
+
+## Chart.js
+
+Chart.js se utiliza para crear gráficos de líneas que visualizan la tendencia de ingresos y gastos a lo largo del tiempo. Los gráficos se integran con los datos proporcionados por la API.
+
+## Servicios
+
+Los servicios de Angular se utilizan para interactuar con la API RESTful. Esto permite separar la lógica de presentación de la lógica de negocio y facilita el mantenimiento del código.
